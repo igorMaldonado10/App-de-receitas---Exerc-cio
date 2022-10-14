@@ -234,19 +234,44 @@ class Detalhe extends StatelessWidget {
         SizedBox(
           height: 10,
         ),
+
+        new Container(
+          height: 40 ,
+          width: 800,
+          color: Colors.orange[100],
+          margin: EdgeInsets.only(right: 0),
+          child: new Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [        
+           new Text('MASSA', style: TextStyle(fontWeight: FontWeight.bold),          
+         ),
+            ]
+          ),
+        ),
+
+      SizedBox(height: 30),
         // Modo de preparo
         new Container(
           margin: EdgeInsets.only(left: 5),
           child: new Row(
             children: [
-              SizedBox(width: 10),
-              caracterEspe('1'),
-              new Text(
-                  'Bata no liquidificador o óleo, o leite e os ovos, misture bem aos outros ingredientes.\n',
-                  style: TextStyle(fontSize: 15)),
-              caracterEspe('2'),
-              new Text(
-                  'Unte com margarina e polvilhe com farinha de trigo uma forma para bolo.')
+              Padding(padding: EdgeInsets.all(10)),
+              new Column(
+              children: [    
+               new Text(       
+              '1 - Bata no liquidificador o óleo, o leite e os ovos, misture bem aos outros ingredientes.\n' +
+              '2 - Unte com margarina e polvilhe com farinha de trigo uma forma para bolo.\n' +
+              '3 - Despeje a massa e leve para assar em forno quente, por aproximadamente 40 minutos\n     ' +
+                   'ou até que ao enfiar um palito ele saia limpo.\n' +
+              '4 - Espere esfriar, desenforme e corte ao meio.\n' +
+              '5 - Umedeça com a calda, recheie com metade da mousse e cubra com a outra metade.\n' +
+              '6 - Leve para gelar, quando a mousse estiver dura, espalhe a semente do maracujá sobre o bolo.\n' +
+              '7 - Sirva gelado.',
+              style: TextStyle(fontSize: 18),
+               ),
+               ]
+              ),
+            
             ],
           ),
         ),
@@ -265,18 +290,16 @@ Text marcarTexto(String texto) {
 
 Text caracterEspe(String texto) {
   Text numeroEsp = new Text('$texto',
-      style: TextStyle(fontSize: 30, color: Colors.grey[350]));
+      style: TextStyle(fontSize: 15));
   return numeroEsp;
 }
 
-Row caracterNumerico() {
-  String numero = '';
-  String texto = '';
- return new Row(
-  children: [
-        new Text('$numero $texto')
-       ],
-    }
+Text caracterNumerico(String numero) {
+  return new Text(
+    '$numero',
+    style: TextStyle(fontSize: 30, color: Colors.grey[350]),
+  );
+}
     
   
  

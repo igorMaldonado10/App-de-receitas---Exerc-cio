@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:tudo_soboroso/Detalhe.dart';
 
 class TudoSaboroso extends StatefulWidget {
@@ -24,7 +25,25 @@ class TudoSaborosoState extends State<TudoSaboroso> {
       ),
 
       //  Menu de opções
-      // drawer: ,
+      endDrawer: Drawer(
+        child: ListView(
+          children: [
+            DrawerHeader(child: 
+            new Text(
+            'Itens do menu',
+            style: TextStyle(fontSize: 22)),
+            decoration: new BoxDecoration(color: Colors.orange[100]),
+            ),
+            
+            new ListTile(
+              leading: FaIcon(FontAwesomeIcons.calculator),
+              title: new Text('user chef'),
+              trailing: Icon(Icons.keyboard_arrow_right),
+            )
+          ],
+          
+        ),
+      ),
 
       // Corpo do App
       body: SingleChildScrollView(
